@@ -1,0 +1,22 @@
+--- include/Decibel/types.h	2007-07-27 11:36:15.000000000 +0200
++++ include/Decibel/hmm	2008-11-19 16:45:56.181019750 +0100
+@@ -27,7 +27,7 @@
+ #include <QtDBus/QDBusArgument>
+ #include <QtDBus/QDBusMetaType>
+ 
+-#include <QtTelepathy/Common/BaseTypes>
++#include <QtTelepathy/Common/Types>
+ 
+ namespace QtTapioca
+ {
+--- src/server/connectionfacade.h	2008-11-19 16:52:45.586606000 +0100
++++ src/server/connectionfacade.h-new	2008-11-19 16:53:16.304525750 +0100
+@@ -152,7 +152,7 @@
+ 
+     /** @brief Called by Tapioca whenever a presence was updated. */
+     void onPresenceUpdated(QtTapioca::ContactBase *,
+-                           QtTapioca::ContactBase::Presence,
++                           QtTapioca::PresenceState,
+                            const QString &);
+ 
+     /** @brief Called by Tapioca whenever a Channel was opened. */
