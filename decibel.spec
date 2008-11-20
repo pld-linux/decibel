@@ -2,17 +2,18 @@
 # Conditional build:
 #
 %define		qt_ver		4.4.3
+%define		snap 		886824
 
 Summary:	Decibel
 Summary(pl.UTF-8):	Decibel
 Name:		decibel
-Version:	0.5.0
-Release:	0.1
-License:	GPL v2
+Version:	0.7.0
+Release:	0.%{snap}.1
+License:	LGPL v2+
 Group:		X11/Applications
-Source0:	http://decibel.kde.org/fileadmin/downloads/decibel/releases/%{name}-%{version}.tar.gz
+#Source0:	http://decibel.kde.org/fileadmin/downloads/decibel/releases/%{name}-%{version}.tar.gz
+Source0:	%{name}-%{version}-%{snap}.tar.gz
 # Source0-md5:	7de299ace568c87a746388ad765228e5
-Patch0:		%{name}-types.patch
 URL:		http://decibel.kde.org/
 BuildRequires:	QtCore-devel >= %{qt_ver}
 BuildRequires:	QtDBus-devel >= %{qt_ver}
@@ -34,10 +35,10 @@ based chat and instant messaging.
 #%description -l pl.UTF-8
 
 %package devel
-Summary:        Header files for decibel library
-Summary(pl.UTF-8):      Pliki nagÅ~BÃ³wkowe biblioteki decibel
-Group:          Development/Libraries
-Requires:      %{name} = %{version}-%{release}
+Summary:	Header files for decibel library
+Summary(pl.UTF-8):	Pliki nagÅ~BÃ³wkowe biblioteki decibel
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for decibel library.
@@ -46,8 +47,7 @@ Header files for decibel library.
 Pliki nagÅ~BÃ³wkowe biblioteki decibel.
 
 %prep
-%setup -q
-%patch0 -p0
+%setup -q -n %{name}-%{version}-%{snap}
 
 %build
 install -d build
@@ -71,7 +71,25 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root)
+%attr(755,root,root) %{_bindir}/decibel
+%attr(755,root,root) %{_bindir}/decibel_logger
+%attr(755,root,root) %{_bindir}/textchannelgui
+%attr(755,root,root) %{_libdir}/libDecibel.so.0.7.1
+%attr(755,root,root) %{_libdir}/libdecibel_pluginhelper.so.0.7.1
+%{_libdir}/Decibel
+%dir %{_datadir}/Decibel
+%dir %{_datadir}/Decibel/components
+%{_datadir}/Decibel/components/org.kde.Decibel.Log.component
+%{_datadir}/Decibel/components/org.kde.SimpleClient.TextChannel.component
+%{_datadir}/Decibel/components/org.kde.textchannelgui.TextChannel.component
+%{_datadir}/dbus-1/services/org.kde.Decibel.Daemon.service
+%{_datadir}/dbus-1/services/org.kde.Decibel.Log.service
+%{_datadir}/dbus-1/services/org.kde.SimpleClient.service
+%{_datadir}/dbus-1/services/org.kde.textchannelgui.service
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libDecibel.so
+%attr(755,root,root) %{_libdir}/libdecibel_pluginhelper.so
+%{_includedir}/Decibel
+%{_pkgconfigdir}/Decibel.pc
