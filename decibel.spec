@@ -13,7 +13,7 @@ License:	LGPL v2+
 Group:		X11/Applications
 #Source0:	http://decibel.kde.org/fileadmin/downloads/decibel/releases/%{name}-%{version}.tar.gz
 Source0:	%{name}-%{version}-%{snap}.tar.gz
-# Source0-md5:	7de299ace568c87a746388ad765228e5
+# Source0-md5:	ddd86ac42d821789bba455eb73f3b9d8
 URL:		http://decibel.kde.org/
 BuildRequires:	QtCore-devel >= %{qt_ver}
 BuildRequires:	QtDBus-devel >= %{qt_ver}
