@@ -2,7 +2,7 @@
 # Conditional build:
 #
 %define		qt_ver		4.4.3
-%define		snap 		886824
+%define		snap 		890391
 
 Summary:	Decibel
 Summary(pl.UTF-8):	Decibel
@@ -13,7 +13,7 @@ License:	LGPL v2+
 Group:		X11/Applications
 #Source0:	http://decibel.kde.org/fileadmin/downloads/decibel/releases/%{name}-%{version}.tar.gz
 Source0:	%{name}-%{version}-%{snap}.tar.gz
-# Source0-md5:	ddd86ac42d821789bba455eb73f3b9d8
+# Source0-md5:	595c8f1ac65880f73dbbe8d81c02ec58
 URL:		http://decibel.kde.org/
 BuildRequires:	QtCore-devel >= %{qt_ver}
 BuildRequires:	QtDBus-devel >= %{qt_ver}
