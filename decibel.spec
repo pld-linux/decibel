@@ -36,7 +36,7 @@ based chat and instant messaging.
 
 %package devel
 Summary:	Header files for decibel library
-Summary(pl.UTF-8):	Pliki nag舿B贸wkowe biblioteki decibel
+Summary(pl.UTF-8):	Pliki nag艂贸wkowe biblioteki decibel
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -44,7 +44,7 @@ Requires:	%{name} = %{version}-%{release}
 Header files for decibel library.
 
 %description devel -l pl.UTF-8
-Pliki nag舿B贸wkowe biblioteki decibel.
+Pliki nag艂贸wkowe biblioteki decibel.
 
 %prep
 %setup -q -n %{name}-%{version}-%{snap}
