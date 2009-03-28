@@ -8,7 +8,7 @@ Summary:	Decibel
 Summary(pl.UTF-8):	Decibel
 Name:		decibel
 Version:	0.7.0
-Release:	0.%{snap}.1
+Release:	0.%{snap}.2
 License:	LGPL v2+
 Group:		X11/Applications
 #Source0:	http://decibel.kde.org/fileadmin/downloads/decibel/releases/%{name}-%{version}.tar.gz
